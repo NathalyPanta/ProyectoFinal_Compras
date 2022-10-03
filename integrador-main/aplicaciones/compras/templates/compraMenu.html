@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block regresar %}
+     <a class="btn mt-3" style="background-color: #1dc7a0 " href="{{ url_anterior }}">
+            Regresar
+      </a>
+{% endblock %}
+
+{% block main %}
+     <div class="container-fluid mt-4">
+       <div class="mx-auto row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-5 d-flex justify-content-start align-items-center">
+
+           <div class="col ">
+            <div class="card card-section border rounded-5 p-3" style="height:12rem;width: 12rem">
+              <div class="card-header card-header-first rounded pb-3 text-center">
+                 <h5 class="card-header-title text-white ">Proveedores</h5>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text font-wight">Ingreso de Proveedores</p>
+                 <a class="text-decoration-none btn btn-gradient " href="{% url 'compras:proveedor' %}">
+                    <h6 class="text-light">Más Info...</h6>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+           <div class="col ">
+            <div class="card card-section border rounded-5 p-3" style="height:12rem;width: 12rem">
+              <div class="card-header card-header-first rounded pb-3 text-center">
+                 <h5 class="card-header-title text-white ">Pedidos</h5>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text font-wight">Ingreso de Pedidos</p>
+                 <a class="text-decoration-none btn btn-gradient " href="{% url 'compras:pedido' %}">
+                    <h6 class="text-light">Más Info...</h6>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+           <div class="col ">
+            <div class="card card-section border rounded-5 p-3" style="height:12rem;width: 12rem">
+              <div class="card-header card-header-first rounded pb-3 text-center">
+                 <h5 class="card-header-title text-white ">Registro De Compras</h5>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text font-wight">Registro de la compra de Productos</p>
+                 <a class="text-decoration-none btn btn-gradient " href="{% url 'compras:registroc' %}">
+                    <h6 class="text-light">Más Info...</h6>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+       </div>
+     </div>
+
+{% endblock %}

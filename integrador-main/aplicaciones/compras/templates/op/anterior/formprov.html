@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COMPRAS</title>
+      {% load static %}
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <header>
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock %}
+</header>
+
+    <div class="container my-5">
+        <div class="card">
+        <div
+          class="card-header"
+          style="background-color: rgb(114,110,95)"
+        >
+          <div class="container row">
+            <div class="col-md-8">
+              <h2 class="fs-2 fw-bold" style="color:#ded9d6;">SISTEMA ADMINISTRATIVO</h2>
+            </div>
+
+            <div
+              class="col-md-4 wrap rounded-4 text-center"
+              style="background-color: rgba(255, 255, 255, 0.623)"
+            >
+              <div class="widget fw-bold fs-5" style="color:rgb(114,110,95)">
+                <div class="fecha">
+                  <p id="diaSEM" class="diaSEM d-inline"></p>
+                  <p id="dia" class="dia d-inline"></p>
+                  <p class="d-inline">de</p>
+                  <p id="mes" class="mes d-inline"></p>
+                  <p class="d-inline">del</p>
+                  <p id="year" class="year d-inline"></p>
+                </div>
+
+                <div class="reloj">
+                  <p id="horas" class="horas d-inline"></p>
+                  <p class="d-inline">:</p>
+                  <p id="minutos" class="minutos d-inline"></p>
+                  <p class="d-inline">:</p>
+                  <p id="segundos" class="segundos d-inline"></p>
+                </div>
+              </div>
+            </div>
+            <script src="{% static 'js/reloj.js' %}"></script>
+          </div>
+        </div>
+            <div class="card-header"style="background-color: rgb(237,236,232)">
+                <h2 class="fs-1 fw-bold m-3  text-center" style="color:#726e5f" >
+                Agregar Proveedores
+            </h2></div>
+
+            <div class="card-body" style="background-color: rgba(222,217,214,0.25)">
+
+                <form class="row g-3">
+            
+            <div class="col-md-6">
+              <label for="NameId" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="NameId">
+            </div>
+            <div class="col-md-6">
+              <label for="inputcd" class="form-label">RUC/Cédula</label>
+              <input type="text" class="form-control" id="inputcd">
+            </div>
+            <div class="col-12">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-12">
+              <label for="numero" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="numero">
+            </div>
+            <div class="col-md-4">
+              <label for="inputCity" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-8">
+              <label for="inputAddress" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="inputAddress" >
+            </div>
+
+            <div class=" mt-5">
+            {% block buttons_list %}
+                <a href="{{ listaP_url }}" class="btn  btn-flat btnTest text-white" style="background-color: #726e5f">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg> Guardar
+                </a>
+                <a href="{{ listaP_url }}" class="btn btn-danger btn-flat">
+                     Cancelar
+                </a>
+            {% endblock %}
+        </div>
+
+          </form>
+            </div>
+        </div>
+        </div>
+
+
+        
+    </div>
+   
+
+  </body>

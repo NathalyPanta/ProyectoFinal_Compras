@@ -1,0 +1,67 @@
+{% extends 'formulario.html' %}
+{% load static %}
+
+{% block js %}
+{#    <script src="{% static 'cliente/js/form.js' %}"></script>#}
+{% endblock %}
+
+{% block controls %}
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Error al Grabar</strong> {{ form.errors }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+    {% endif %}
+
+    <input type="hidden" name="action" value="{{ action }}">
+{#    {{ form.as_p }}#}
+
+    <div class="form-group ">
+        <label class="h6">Fecha</label>
+        {{ form.fecha_registro }}
+    </div>
+
+    <div class="form-group">
+        <label class="h6">Referencia</label>
+        {{ form.referencia }}
+
+    </div>
+    <div class="form-group">
+        <label class="h6">Nombre del Producto</label>
+        {{ form.producto }}
+    </div>
+    <div class="form-group">
+        <label class="h6">Cantidad</label>
+        {{ form.cantidad }}
+    </div>
+    <div class="form-group">
+        <label class="h6">Precio</label>
+        {{ form.precio }}
+    </div>
+    <div class="form-group">
+        <label class="h6">Subtotal</label>
+        {{ form.subtotal }}
+    </div>
+    <div class="form-group">
+        <label class="h6">IVA</label>
+        {{ form.iva }}
+    </div>
+    <div class="form-group">
+        <label class="h6">Total</label>
+        {{ form.total }}
+    </div>
+
+    <div class="btn-toolbar" role="toolbar">
+  <button type="button" onclick="pedido()" class="btn btn-danger btn-lg">
+    <span class="glyphicon glyphicon-star"></span> Calcular
+  </button></div>
+
+    <script src="{% static 'js/prueba.js' %}"></script>
+
+
+{#    <output id="idImgContenedor" style="width: 200px !important;"></output>#}
+{% endblock %}

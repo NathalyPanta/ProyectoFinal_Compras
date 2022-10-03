@@ -1,0 +1,49 @@
+{% extends 'consulta.html' %}
+{% load static %}
+
+{% block search %}
+    <form action="{% url 'compras:registroc' %}" method="GET">
+    <div class="input-group mb-3">
+        <input type="text" name="query" value="{{ query }}" class="form-control" placeholder="Buscar... por nombre" id="idInputSearch" aria-describedby="basic-addon2">
+        <button type="submit" style="background-color: #164058; color: #ffffff" class="btn mr-1" id="idSearchSp">Buscar</button>
+    </div>
+    </form>
+{% endblock %}
+
+
+{% block columns %}
+    <tr class="table-striped" style="background-color: #164058; color: #ffffff">
+                <th scope="col">N°</th>
+{#                <th scope="col">Usuario</th>#}
+                <th scope="col">Fecha de Registro</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Nombre del Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+                <th class="fst-italic text-center" scope="col">Acciones</th>
+            </tr>
+{% endblock %}
+
+{% block rows %}
+    {% for object in registroc %}
+        <tr class="align-middle" style="background-color: #ffffff;" >
+            <td>{{ object.id }}</td>
+{#            <td>{{ object.usuario }}</td>#}
+            <td>{{ object.hora }}</td>
+            <td>{{ object.referencia }}</td>
+            <td>{{ object.producto }}</td>
+            <td>{{ object.cantidad }}</td>
+            <td>{{ object.total }}</td>
+{#            <td class="acciones">#}
+{#                <a href="#">✏️</a>#}
+{#                <a href="#">❌</a>#}
+{#            </td>#}
+        <td class="acciones">
+                <a href="{% url 'compras:actualizaRegistro' object.id %}">✏️</a>
+                <a href="{% url 'compras:eliminaRegistro' object.id %}">❌</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+
+{% endblock %}

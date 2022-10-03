@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>COMPRAS</title>
+    {% load static %}
+    <!-- CSS only -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    {% block headcss %}
+    {% endblock %}
+</head>
+<body>
+<!-- JavaScript Bundle with Popper -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"
+></script>
+<header>
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock %}
+</header>
+
+
+<h1 class="text-success fs-1 fw-bold p-3"><i class="bi bi-cart4"></i> COMPRA</h1>
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2">
+            <div class="col">
+                <div class="card" style="height:15rem">
+
+                    <div class="card-body text-center">
+{#                        <a class="text-decoration-none" href="{% url 'pedido' %}">#}
+                            <img src="{% static 'img/img_c/pedido.png' %}"
+                         class="img-fluid  mx-auto d-block p-3" style="width:60%">
+                            <h5 class="card-title text-success fw-bold">PEDIDO</h5>
+                        </a>
+{#                        <p class="card-text">...</p>#}
+                    </div>
+                </div>
+            </div>
+{#            <div class="col">#}
+{#                <div class="card" style="height:15rem">#}
+{##}
+{#                    <div class="card-body text-center">#}
+{#                        <a class="text-decoration-none" href="{% url 'registrar' %}">#}
+{#                            <img src="{% static 'img/img_c/registra.png' %}"#}
+{#                         class="img-fluid  mx-auto d-block p-3" style="width:60%">#}
+{#                            <h5 class="card-title text-success fw-bold">REGISTRO DE COMPRAS</h5>#}
+{#                        </a>#}
+{#                        <p class="card-text">Ingrese para registrar su pedido</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+            <div class="col">
+                <div class="card" style="height:15rem">
+
+                    <div class="card-body text-center">
+{#                        <a class="text-decoration-none" href="{% url 'listacompra' %}">#}
+                            <img src="{% static 'img/img_c/lista.png' %}"
+                         class="img-fluid  mx-auto d-block p-3" style="width:60%">
+                            <h5 class="card-title text-success fw-bold">LISTADO DE COMPRAS</h5>
+                        </a>
+{#                        <p class="card-text">Listado de todas las compras realizadas</p>#}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="height:15rem">
+
+                    <div class="card-body text-center">
+{#                        <a class="text-decoration-none" href="{% url 'proveedor' %}">#}
+                            <img src="{% static 'img/img_c/prov.png' %}"
+                         class="img-fluid  mx-auto d-block p-3" style="width:60%">
+                            <h5 class="card-title text-success fw-bold">PROVEEDORES</h5>
+                        </a>
+{#                        <p class="card-text">Registra nuevos proveedores o edita los ya existentes</p>#}
+                    </div>
+                </div>
+            </div>
+{#            <div class="col">#}
+{#                <div class="card" style="height:15rem">#}
+{##}
+{#                    <div class="card-body text-center">#}
+{#                        <a class="text-decoration-none" href="{% url 'registrar' %}">#}
+{#                            <img src="{% static 'img/img_c/registra.png' %}"#}
+{#                         class="img-fluid  mx-auto d-block p-3" style="width:60%">#}
+{#                            <h5 class="card-title text-success">REGISTRO DE COMPRAS</h5>#}
+{#                        </a>#}
+{#                        <p class="card-text">Ingrese para registrar su pedido</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+        </div>
+    </div>
+{% endblock %}
+
+
+</body>
+</html>
